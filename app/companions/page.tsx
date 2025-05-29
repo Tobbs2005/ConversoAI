@@ -2,6 +2,7 @@ import { getAllCompanions } from "@/lib/actions/companions.actions";
 import CompanionCard from "@/components/ui/CompanionCard";
 import SearchInput from "@/components/ui/SearchInput";
 import SubjectFilter from "@/components/ui/SubjectFilter";
+import { getSubjectColor } from "@/lib/utils";
 
 const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
   const filters = await searchParams;
@@ -20,7 +21,11 @@ const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
       </section>
       <section className="companions-grid">
         { companions.map((companion) => (
-          <CompanionCard key={companion.id} {...companion} />
+          <CompanionCard 
+            key={companion.id} 
+            {...companion} 
+            color={getSubjectColor(companion.subject)}
+          />
         )) }
       </section>
     </main>
