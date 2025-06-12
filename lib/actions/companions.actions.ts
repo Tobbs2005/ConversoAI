@@ -101,7 +101,7 @@ export const getUserSessions = async (userId: string, limit = 10) => {
 export const getUserCompanions = async (userId: string) => {
   const supabase = createSupabaseClient();
   const { data, error } = await supabase
-    .from('companions')
+    .from('Companions')
     .select()
     .eq('author', userId)
 
@@ -111,3 +111,4 @@ export const getUserCompanions = async (userId: string) => {
 
   return data;
 }
+
