@@ -3,7 +3,6 @@ import CompanionCard from '@/components/ui/CompanionCard'
 import CompanionsList from '@/components/ui/CompanionsList'
 import CTA from '@/components/ui/CTA'
 import { getUserSessions } from '@/lib/actions/companions.actions'
-import Footer from '@/components/ui/footer'
 import { currentUser } from '@clerk/nextjs/server'
 
 
@@ -31,7 +30,7 @@ const Page = async () => {
         ))} */}
 
         
-<CompanionCard
+        <CompanionCard
           id="1e5808ba-b6d0-4a34-b97f-2ade8059a676"
           name="Neura the Brainy Explorer"
           topic="Neural Network of the Brain"
@@ -58,11 +57,11 @@ const Page = async () => {
       
       </section>
       <section className="home-section">
-        {(user && <CompanionsList 
+        <CompanionsList 
           title="Recently completed sessions"
           companions={recentSessionCompanions} 
           classNames="w-2/3 max-lg:wfull"
-        />)}
+        />
         
         <CTA></CTA>
       </section>
@@ -70,7 +69,6 @@ const Page = async () => {
 
       
     </main>
-    <Footer />
     </>
   )
 }
