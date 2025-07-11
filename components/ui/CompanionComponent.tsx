@@ -101,7 +101,7 @@ const CompanionComponent = ({companionId, subject, topic, name, userName, userIm
   
   
   return (
-    <section className="flex flex-col h-[70vh]">
+    <section className="flex flex-col h-[100vh]">
       <section className="flex gap-8 max-sm:flex-col">
         <div className="companion-section">
           <div className="companion-avatar" style={{backgroundColor: getSubjectColor(subject)}}>
@@ -150,7 +150,8 @@ const CompanionComponent = ({companionId, subject, topic, name, userName, userIm
           </button>
         </div>
       </section>
-      <section className="transcript">
+      <h2 className="text-xl font-semibold mt-8 mb-2 px-1">Transcript</h2>
+      <section className="transcript relative rounded-xl border bg-card p-4 max-h-[300px] overflow-y-auto shadow-sm">
         <div className="transcript-message no-scrollbar">
           {messages.map((message, index)=>{
             if(message.role === 'assistant'){
@@ -166,7 +167,7 @@ const CompanionComponent = ({companionId, subject, topic, name, userName, userIm
             }
           })}
         </div>
-        <div className="transcript-fade"/>
+        <div className="transcript-fade-bottom"/>
       </section> 
 
     </section>
