@@ -24,7 +24,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
 
   return (
     <article className={cn('companion-list', classNames)}>
-      <h2 className="font-bold text-3xl">Recent Sessions</h2>
+      <h2 className="font-bold text-3xl">Companions</h2>
       <Table>
         <TableHeader>
           <TableRow>
@@ -37,7 +37,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
           {isEmpty ? (
             <TableRow>
               <TableCell colSpan={3} className="text-center py-6 text-gray-500 text-lg">
-                No sessions found. Start a new one to see it here!
+                No companions found, create or start a new session!
               </TableCell>
             </TableRow>
           ) : (

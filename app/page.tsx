@@ -13,6 +13,7 @@ const Page = async () => {
   let recentSessionCompanions;
   if(user) {
     recentSessionCompanions = await getUserSessions(user.id, 10);
+    recentSessionCompanions = recentSessionCompanions.slice(0, 6);
   }
   
 
